@@ -1,7 +1,8 @@
 Date Started 11.12.2024
 Collection Framework in Java:
+Iterable-> List-> ArrayList,LinkedList,Vector,Stack,CopyonWriteArrayList
 
-ArrayList:
+Topic:1 ArrayList:
 Unlike a regular array,which has a fixed size and ArrayList can grow and shrink as elements are added or removed.
 This dynamic resizing is archived by creating a new array when the current array is full and copying the elements to the new array.
 
@@ -52,6 +53,88 @@ Sort a List
 
         Collections.sort(list);or do  list.sort(null);
         System.out.println(list);
+
+Topic:2 LinkedList:
+-----------------
+List ka ek aur implementation class.
+Array is contiguous block of  memory location.
+but Linked list is a pointer based address mapping.
+
+LinkedList is a liner data structure where each element is a separate object
+called node.
+Each node contains two parts
+Data and pointer
+Data: The value stored in the node.
+Pointer: Two pointers, one pointing to the next node (next)
+and other pointing to the previous node(previous).
+
+Performance Consideration:
+-------------------------
+LinkedList has different performance characteristics compared to ArrayList.
+
+Insertion and Deletion:
+LinkedList is betel for frequent insertion and deletion.
+Here we do not need shifting elements as arrayList.
+
+Random Access:
+LinkedList has slower random access (get(int index)) compared
+to ArrayList because it has to traverse the list from the beginning to reach the
+desire index.
+
+Example:
+LinkedList<Integer> linkedlist = new LinkedList<>();
+        linkedlist.add(1);
+        linkedlist.add(2);
+        linkedlist.add(3);
+        linkedlist.add(4);
+        linkedlist.add(5);
+        linkedlist.addFirst(6);
+        linkedlist.addLast(7);
+
+        System.out.println(linkedlist);
+
+        linkedlist.get(4); //O(n)
+        linkedlist.getFirst();
+        linkedlist.getLast();
+        System.out.println(linkedlist.get(1));
+
+        linkedlist.remove(1);
+        linkedlist.removeIf(x-> x%2==0); //in java8
+        //Remove all even number
+        System.out.println(linkedlist);
+
+        LinkedList<String> animals= new LinkedList<String>(Arrays.asList("Cat","Dog","Elephant","Cow"));
+        LinkedList<String> animalsToRemove = new LinkedList<>(Arrays.asList("Cow"));
+        animals.removeAll(animalsToRemove);
+        System.out.println(animals);
+
+Topic:3 Vector
+-----------------
+List ka ek aur implementation class he vector.
+
+A vector in java is a part of the java.util package and is one of the legacy classes in java
+that implements the List interface.
+
+it was introduced in JDK1.0 before collection framework and is synchronized , making it thread-safe.
+
+However, due to its synchronization overhead. it's generally recommended to use other modern
+alternatives like ArrayList in single-thread scenario.
+Despite this,Vector is still usefully in certain situations,partially in multithreaded environments where
+thread safety is a concern.
+
+Key Features:
+Dynamic Array: Like ArrayList , Vector is a dynamic array that grows automatically when more
+elements are added then its current size.
+
+Synchronized, Legacy class(It's recommended to use ArrayList in single-threaded environments due to performance considerations.)
+Resizing Mechanism(when the current size of the vector is excluded,It doubles its size by default(or increase by specific capacity increment if provided.))
+Random  Access,
+
+
+
+
+
+
 
 
 

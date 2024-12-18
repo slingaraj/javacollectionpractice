@@ -1,23 +1,18 @@
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.Vector;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        ArrayList<Integer> list = new ArrayList<>();
-        list.add(5);
-        list.add(7);
-        list.add(4);
-        list.add(6);
-        list.add(1);
-        list.add(8);
+        Vector<Integer> vector= new Vector<>(11);
+        System.out.println(vector.capacity());//default is 10 else o/p 11
 
-        //Collections.sort(list);
-        list.sort(null);
-        System.out.println(list);
+
+
+
+
 
 
 
