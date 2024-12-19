@@ -130,6 +130,80 @@ Synchronized, Legacy class(It's recommended to use ArrayList in single-threaded 
 Resizing Mechanism(when the current size of the vector is excluded,It doubles its size by default(or increase by specific capacity increment if provided.))
 Random  Access,
 
+Example
+ Vector<Integer> vector= new Vector<>(11,3);
+        System.out.println(vector.capacity());//default is 10 else o/p 11
+
+in the new Vector(11,3)
+here 11 is the capacity of the vector
+and 3 is the increment size of the vector.
+If you not provide the incrementalism it will increase 2x times.
+
+Methods in the vector
+->add(E e): Adds an element at the end.
+->add(int index, E element): Inserts an element at the specified index.
+->get(int index): Retries the element as the specified index.
+->set(int index, E element): Replace the element at the specified element.
+... etc.
+
+Synchronization and performance.
+-------------------------------
+Since vector methods are synchronized,it ensures that only one thread can access
+the vector at a time.This make it thread-safe but can introduce performance overhead
+in single thread env because sync. adds locking and unlocking cots.
+
+Topic:4 Stack
+LIFO
+Last item added to the stack will be the first item to be removed.
+it's a stack of cookies(biscuit).
+Since stack extends vector its synchronized.making it thread safe.
+
+
+Topic:4 CopyOnWriteArrayList
+---------------------------
+Reading and modifying on same time.
+
+Topic: 5 MAP
+-------------
+In java, a map is an object that maps keys to values.
+It cannot contain duplicate keys, and each key can map to ay most one value.
+Think of it as a dictionary where you look up a word
+(key)
+.
+to find its definition (value).
+Map ka implementation class ek he HashMap
+
+Topic:6 HashMap
+HashMap<Integer,String> map= new HashMap<>();
+        map.put(1,"Hasrshit");
+        map.put(2,"Lingaraj");
+        map.put(3,"Neha");
+        System.out.println(map);
+
+        String student = map.get(3);
+        System.out.println(student);
+        String student1 = map.get(35);
+        System.out.println(student1);//null
+        System.out.println(map.containsValue("Lingaraj"));//true
+        System.out.println(map.containsKey(2));//true
+
+        Set<Integer> keys=map.keySet();
+        System.out.println(keys);
+        for (int i: keys){
+            System.out.println(map.get(i));//outcomes unordered.
+        }
+         Set<Map.Entry<Integer,String>> entries= map.entrySet();
+        for (Map.Entry<Integer, String> entry:entries){
+            System.out.println(entry.getKey()+":"+entry.getValue());
+            entry.setValue(entry.getValue().toUpperCase());
+        }
+        System.out.println(map);
+2:21:25 time stamp--
+
+
+
+
+
 
 
 
